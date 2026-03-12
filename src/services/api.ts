@@ -1,0 +1,14 @@
+import { Product } from "@/types/product"
+
+const API_URL = "https://v2.api.noroff.dev/"
+
+export async function getProducts(): Promise<Product[]> {
+    const response = await fetch(API_URL)
+
+    if(!response.ok) {
+        throw new Error("Failed to fetch products")
+    }
+
+    const data = await response.json()
+    return data
+}
