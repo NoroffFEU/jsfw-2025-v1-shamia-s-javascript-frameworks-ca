@@ -1,4 +1,10 @@
+export interface ProductImage {
+    url: string
+    alt: string
+}
+
 export interface Review {
+    id: string
     username: string
     rating: number
     description: string
@@ -8,7 +14,7 @@ export interface Product {
     id: string
     title: string
     description: string
-    image: string
+    image: ProductImage
     price: number
     discountedPrice: number
     rating: number
