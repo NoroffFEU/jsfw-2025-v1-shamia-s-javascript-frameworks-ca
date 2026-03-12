@@ -1,4 +1,5 @@
 import { Product } from "@/types/product";
+import Link from "next/link";
 
 type Props = {
   product: Product;
@@ -10,6 +11,7 @@ export default function ProductCard({ product }: Props) {
   );
 
   return (
+    <Link href={`/product/${product.id}`}>
     <div className="border rounded-lg p-4 shadow hover:shadow-lg transition">
       <img
         src={product.image.url}
@@ -43,5 +45,6 @@ export default function ProductCard({ product }: Props) {
         )}
       </div>
     </div>
+    </Link>
   );
 }
