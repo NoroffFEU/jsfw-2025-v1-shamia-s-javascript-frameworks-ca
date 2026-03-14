@@ -1,34 +1,22 @@
 import { getProducts } from "@/services/api";
 import ProductCard from "@/components/ProductCard";
+import SearchBar from "@/components/SearchBar";
+import { Product } from "@/types/product";
 
 export default async function Home() {
-
-  const Products = await getProducts();
+  const products: Product[] = await getProducts();
 
   return (
-    <main className="p-10">
+    <main className="p-10 max-w-6xl mx-auto">
+      <h1 className="text-4xl font-bold mb-6">NextCart</h1>
 
-      <h1 className="text-4xl font-bold">
-        Welcome to NextCart
-      </h1>
+      <SearchBar products={products} />
 
-      <p className="mt-4 text-lg mb-8">
-        Discover amazing products at great prices.
-      </p>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-        {Products.map((product)=> (
-          <ProductCard
-          key={product.id}
-          product={product}
-          />
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
-
       </div>
-
     </main>
   );
 }
-
-  
