@@ -1,6 +1,12 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 import { Product } from "@/types/product";
 
 export type CartItem = Product & { quantity: number };
@@ -36,7 +42,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         return prev.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + quantity }
-            : item
+            : item,
         );
       }
       return [...prev, { ...product, quantity }];
@@ -50,8 +56,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const updateQuantity = (productId: string, quantity: number) => {
     setCartItems((prev) =>
       prev.map((item) =>
-        item.id === productId ? { ...item, quantity } : item
-      )
+        item.id === productId ? { ...item, quantity } : item,
+      ),
     );
   };
 
@@ -60,7 +66,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   const cartTotal = cartItems.reduce(
     (sum, item) => sum + item.quantity * item.discountedPrice,
-    0
+    0,
   );
 
   return (

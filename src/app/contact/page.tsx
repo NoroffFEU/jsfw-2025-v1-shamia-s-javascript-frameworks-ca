@@ -57,7 +57,7 @@ export default function ContactPage() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setForm({
       ...form,
@@ -70,9 +70,7 @@ export default function ContactPage() {
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
 
       {submitted && (
-        <p className="mb-4 text-green-600">
-          Message sent successfully!
-        </p>
+        <p className="mb-4 text-green-600">Message sent successfully!</p>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -85,9 +83,7 @@ export default function ContactPage() {
             onChange={handleChange}
             className="w-full border px-4 py-2 rounded"
           />
-          {errors.name && (
-            <p className="text-red-500 text-sm">{errors.name}</p>
-          )}
+          {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
         </div>
 
         <div>
@@ -118,7 +114,6 @@ export default function ContactPage() {
           )}
         </div>
 
-       
         <div>
           <textarea
             name="message"

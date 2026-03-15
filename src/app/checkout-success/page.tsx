@@ -1,4 +1,3 @@
-// src/app/checkout-success/page.tsx
 import Link from "next/link";
 
 export default function CheckoutSuccessPage() {

@@ -12,7 +12,7 @@ export default function SearchBar({ products = [] }: Props) {
   const [query, setQuery] = useState("");
 
   const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(query.toLowerCase())
+    product.title.toLowerCase().includes(query.toLowerCase()),
   );
 
   return (
@@ -25,7 +25,7 @@ export default function SearchBar({ products = [] }: Props) {
         onChange={(e) => setQuery(e.target.value)}
       />
 
-       {query && (
+      {query && (
         <div className="absolute w-full bg-white border mt-1 rounded shadow z-10 max-h-80 overflow-y-auto">
           {filteredProducts.length > 0 ? (
             filteredProducts.slice(0, 6).map((product) => (
@@ -41,9 +41,7 @@ export default function SearchBar({ products = [] }: Props) {
                 />
 
                 <div className="flex flex-col">
-                  <span className="text-sm font-medium">
-                    {product.title}
-                  </span>
+                  <span className="text-sm font-medium">{product.title}</span>
 
                   <span className="text-xs text-gray-500">
                     ${product.discountedPrice.toFixed(2)}
@@ -52,9 +50,7 @@ export default function SearchBar({ products = [] }: Props) {
               </Link>
             ))
           ) : (
-            <p className="px-4 py-2 text-gray-500">
-              No products found
-            </p>
+            <p className="px-4 py-2 text-gray-500">No products found</p>
           )}
         </div>
       )}

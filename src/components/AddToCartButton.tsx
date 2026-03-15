@@ -15,8 +15,8 @@ export default function AddToCartButton({ product }: Props) {
 
   const handleAddToCart = () => {
     addToCart(product, quantity);
-   setMessage(`${quantity} × ${product.title} added to cart`);
-    setTimeout(()=> setMessage(""), 3000);
+    setMessage(`${quantity} × ${product.title} added to cart`);
+    setTimeout(() => setMessage(""), 3000);
   };
 
   return (
@@ -46,8 +46,8 @@ export default function AddToCartButton({ product }: Props) {
 
       {message && (
         <div className="mt-2 bg-green-200 text-green-800 px-4 py-2 rounded shadow transition-opacity">
-            {message}
-            </div>
+          {message}
+        </div>
       )}
     </div>
   );
