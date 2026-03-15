@@ -42,5 +42,5 @@ Deployed on vercel.
 
 [Visit Live Website](https://jsfw-2025-v1-shamia-s-javascript-fr.vercel.app/)
 
-## Auther
+## Author
 Shamia Shamia
