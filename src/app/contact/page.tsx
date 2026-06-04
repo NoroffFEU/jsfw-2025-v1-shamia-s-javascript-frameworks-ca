@@ -1,6 +1,12 @@
 "use client";
 
 import { useState } from "react";
+type FormErrors = {
+  name?: string;
+  subject?: string;
+  email?: string;
+  message?: string;
+};
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -10,7 +16,7 @@ export default function ContactPage() {
     message: "",
   });
 
-  const [errors, setErrors] = useState<any>({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
 
   const validate = () => {
