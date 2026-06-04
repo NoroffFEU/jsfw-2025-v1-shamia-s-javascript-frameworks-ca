@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 type FormErrors = {
   name?: string;
   subject?: string;
@@ -20,7 +21,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
   const validate = () => {
-    const newErrors: any = {};
+    const newErrors: FormErrors = {};
 
     if (form.name.trim().length < 3) {
       newErrors.name = "Name must be at least 3 characters";
